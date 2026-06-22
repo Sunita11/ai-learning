@@ -170,7 +170,49 @@ textarea {
 
 .prompt-card-footer {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.prompt-rating {
+  display: inline-flex;
+  flex-direction: row-reverse;
   justify-content: flex-end;
+  gap: 2px;
+}
+
+.star {
+  color: var(--border-color);
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  transition:
+    color 0.15s,
+    transform 0.15s;
+}
+
+.star:hover {
+  transform: scale(1.15);
+}
+
+.star:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.star-filled {
+  color: #f5a623;
+}
+
+/* Hover preview: highlight the hovered star and all preceding ones */
+.prompt-rating:hover .star {
+  color: var(--border-color);
+}
+
+.prompt-rating .star:hover,
+.prompt-rating .star:hover ~ .star {
+  color: #f5a623;
 }
 
 .btn-delete {
